@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - make build
+  - docker build -t amiroous/docker-k8s-app -f Dockerfile.dev .
 
 script:
-  - make test
+  - docker run -e CI=true USERNAME/docker-react npm run test
