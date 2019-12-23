@@ -8,7 +8,7 @@ down:
 	docker-compose down
 
 test:
-	docker exec -e CI=true amiroous/docker-k8s-app npm run test
+	docker run -e CI=true amiroous/docker-k8s-app npm run test
 
 build-prod:
 	docker build -t amiroous/docker-k8s-app:latest .
